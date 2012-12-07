@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="shared/jquery.js" type="text/javascript"></script>
+    <script src="shared/shiny.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
+    <link rel="stylesheet" type="text/css" href="shared/slider/css/jquery.slider.min.css"/>
+    <script src="shared/slider/js/jquery.slider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="shared/bootstrap/css/bootstrap.min.css"/>
+    <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="shared/bootstrap/css/bootstrap-responsive.min.css"/>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $("#powerCalcOut").show();
+      $("#boundaryCalcOut").hide();
+
+      
+      $("#powerCalcInp").click(function(){
+      $("#boundaryCalcOut").hide();
+      $("#powerCalcOut").show();
+      });
+
+      $("#boundaryCalcInp").click(function(){
+      $("#powerCalcOut").hide();
+      $("#boundaryCalcOut").show();
+      });
+
+      });
+    </script>
+
+    <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <title>Pre-licensure Vaccine Trial Power calculator</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+	<div class="span12" style="padding: 10px 0px;">
+          <h1>Pre-licensure Vaccine Trial Power calculator</h1>
+	</div>
+      </div>
+      <div class="row-fluid">
+	<div class="span4">
+	  <form class="well">
+            <div class="tabbable">
+              <ul class="nav nav-tabs">
+		<li class="active">
+		  <a href="#tab-4469-1" data-toggle="tab" id="powerCalcInp">Power Calculator</a>
+		</li>
+		<li>
+		  <a href="#tab-4469-2" data-toggle="tab" id="boundaryCalcInp">Boundary and Plot</a>
+		</li>
+              </ul>
+              <div class="tab-content">
+		<div class="tab-pane active" title="Power Calculator" id="tab-4469-1">
+		  <span class="help-block">
+		    This tool searches through a space of design
+		    boundaries (scalar values $b_0$ and $b_1$) to find
+		    values that achieve the approximate specified type I
+		    and type II errors for the sequential Generalized
+		    Likelihood Ratio (GLR) test of $p_0$ versus $p_1$ in
+		    pre-licensure vaccine trials; see
+		    <em>Sequential generalized likelihood ratio tests
+		      for vaccine safety evaluation</em> (pp 2698–2708) by
+		    Mei-Chiung Shih, Tze Leung Lai, Joseph F. Heyse and
+		    Jie Chen
+		    <a href="http://onlinelibrary.wiley.com/doi/10.1002/sim.4036/abstract">DOI: 10.1002/sim.4036</a><br>
+		    
+		    Once $(b_0, b_1)$ are chosen, the sample
+		    size and a user-friendly plot and boundary
+		    specification in terms of number of adverse events
+		    can be computed using the other tab.<br>
+		  </span>
+		  <label>1a. Null Hypothesis $p_0$ $\in(0,1)$:</label>
+		  <input id="p0" type="number" value=".5"/>
+		  <label>1b. Alternative Hypothesis $p_1 > p_0$ $\in
+		    (0,1)$ (a value close to $p_0$ is very compute intensive!): </label>
+		  <input id="p1" type="number" value=".75"/>
+		  <label>2. Significance Level $\alpha$ $\in [0.01, 0.15]$:</label>
+		  <input id="alpha" type="number" value=".05"/>
+		  <label>3. Type II Error $\beta$ $\in [0.01, 0.75]$:</label>
+		  <input id="beta" type="number" value=".1"/>
+		  <label>4. Search step size $> 0$:</label>
+		  <input id="stepSize" type="number" value=".5"/>
+		  <label>5. Tolerance $\in [10^{-3}, 10^{-7}]$:</label>
+		  <input id="tol" type="number" value=".0001"/>
+		  <label>6. Maximum number of iterations ($\geq 4$ but
+		    $\leq 100$):</label>
+		  <input id="maxIter" type="number" value="25"/>
+		  <label>7. Number of grid points ($\geq 3$ but $\leq 10$):</label>
+		  <input id="nGrid" type="number" value="5"/>
+		</div>
+		<div class="tab-pane" title="Boundary and Plot"
+		     id="tab-4469-2">
+		  <span class="help-block">
+		    This tool computes the boundary in field-usable form
+		    in terms of the number of adverse events and provides
+		    a visual plot, once $(b_0, b_1)$ are chosen from the
+		    previous tab; see
+		    o		 <em>Sequential generalized likelihood ratio tests
+		      for vaccine safety evaluation</em> (pp 2698–2708) by
+		    Mei-Chiung Shih, Tze Leung Lai, Joseph F. Heyse and
+		    Jie Chen
+		    <a href="http://onlinelibrary.wiley.com/doi/10.1002/sim.4036/abstract">DOI: 10.1002/sim.4036</a><br>
+		  </span>
+		  <label>1a. Null Hypothesis $p_0$ $\in(0,1)$:</label>
+		  <input id="bp0" type="number" value=".5"/>
+		  <label>1b. Alternative Hypothesis $p_1 > p_0$ $\in
+		    (0,1)$ (a value close to $p_0$ is very compute intensive!): </label>
+		  <input id="bp1" type="number" value=".75"/>
+		  <label>2. Rejection Boundary $b_0$:</label>
+		  <input id="bb0" type="number" value="3.3"/>
+		  <label>3. Acceptance Boundary $b_1$:</label>
+		  <input id="bb1" type="number" value="2.8"/>
+		  <label>4. Tolerance $\in [10^{-3}, 10^{-7}]$:</label>
+		  <input id="btol" type="number" value=".0001"/>
+		</div>
+		<div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+              </div>
+            </div>
+	  </form>
+	</div>
+
+	<div class="span8">
+	  <div id="powerCalcOut">
+	    <h4>Type I Error $\alpha$ for GLR boundaries</h4>
+	    <div id="alphaTable" class="shiny-html-output"></div>
+	    <h4>Type II Error $\beta$ for GLR boundaries</h4>
+	    <div id="betaTable" class="shiny-html-output"></div>
+	  </div>
+
+	  <div id="boundaryCalcOut">
+	    <h4>Boundary Plot</h4>
+            <div id="plot" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+	    
+	    <h4>Estimated Type I and Type II Errors</h4>
+	    <pre id="estimate" class="shiny-text-output"></pre>
+	    
+	    <h4>Maximum Total Number of AEs Needed</h4>
+            <pre id="maxAE" class="shiny-text-output"></pre>
+	    
+	    <h4>Boundary in terms of Number of Vaccine Adverse
+	      Events</h4>
+	    <div id="boundary" class="shiny-html-output"></div>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

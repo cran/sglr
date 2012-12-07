@@ -1,0 +1,16 @@
+897dd9457f91ee14b6de3e4b3cc760c7 *Changelog
+0c292e254e753d1946929c809c65b7ee *DESCRIPTION
+ff7e33338933d2ecf269d3e9b7001269 *NAMESPACE
+d1ce112d705f6b2ee39859a62edabcf4 *R/computeBoundary.R
+3d6f8ed87b9fa7bf516991cda036fe7a *R/glrSearch.R
+1fb66dfca4f00cde7c2236ccbdab86a2 *R/plotBoundary.R
+c661f0fa4638005cd34343670f98ac1a *R/sglr-internal.R
+3208935f9eb90d6e6dc2ae9e5661250b *R/sglrWebapp.R
+6c7460c2abdb2f13cfc5d7e639af4185 *inst/CITATION
+864517ab8bc6154747aa53ef14cfd5fb *inst/webapp/server.R
+16f94c4929de9afda1fe6c099ca35b74 *inst/webapp/www/index.html
+399b0dcf9df5d0d858c3e53c37e88efd *man/computeBoundary.Rd
+92883123d72451d34dd4234c23778cf6 *man/glrSearch.Rd
+7f6484f902303660a0e67cbc03e73bfb *man/plotBoundary.Rd
+573fc20b20f5f150af44a8bb538ffb9a *man/sglr-package.Rd
+2111bdeba7751bc94bf06496aa99c3f8 *man/sglrWebapp.Rd
