@@ -22,8 +22,7 @@
 \usage{
 glrSearch(p, alpha, beta, stepSize = 0.5, tol = 1e-7,
           startB1 = log(1/beta), startB0 = log(1/alpha),
-          maxIter = 25, gridIt = FALSE, nGrid = 5,
-          verbose = FALSE)
+          maxIter = 25, gridIt = FALSE, nGrid = 5, verbose = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -116,15 +115,8 @@ glrSearch(p, alpha, beta, stepSize = 0.5, tol = 1e-7,
 }
 
 \references{
-
-  Mei-Chiung Shih, Tze Leung Lai, Joseph F. Heyse, and Jie
-  Chen. Sequential Generalized Likelihood Ratio Tests for Vaccine Safety
-  Evaluation (Statistics in Medicine, Volume 29, issue 26, p.2698-2708,
-  2010.)
-
-  Please also consult the website
-  \url{http://med.stanford.edu/biostatistics/ClinicalTrialMethodology/}
-  for further developments.
+``Sequential Generalized Likelihood Ratio Tests for Vaccine Safety Evaluation''
+\doi{10.1002/sim.4036}.
 }
 
 \author{

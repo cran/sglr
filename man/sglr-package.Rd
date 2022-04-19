@@ -4,14 +4,16 @@
 \docType{package}
 
 \title{
-An R package for power and boundary calculations in pre-licensure vaccine trials using a sequential generalized likelihood ratio test
+  A package for computing the boundaries for sequential generalized
+  likelihood ratio test for pre-licensure vaccine studies
 }
 
 \description{
-
+  
   This package is an implementation of the methodology of Shih, Lai,
-  Heyse, and Chen (see reference below) for computing Generalized
-  Likelihood Ratio test boundaries in pre-licensure vaccine studies
+  Heyse, and Chen (to appear in Statistics in Medicine) for computing
+  Generalized Likelihood Ratio test boundaries for pre-licensure vaccine
+  studies
 }
 
 \details{
@@ -23,7 +25,7 @@ An R package for power and boundary calculations in pre-licensure vaccine trials
     License: \tab GPL (version 2 or later)\cr
     LazyLoad: \tab yes\cr
   }
-
+  
   The package provides several functions. The function \code{glrSearch}
   computes boundaries for testing a given \eqn{p_0} versus \eqn{p_1}
   (specified as a two-dimensional vector) given a significance level
@@ -43,16 +45,12 @@ An R package for power and boundary calculations in pre-licensure vaccine trials
   Balasubramanian Narasimhan with input from Tze Lai and Mei-Chiung Shih.
   Maintainer: Balasubramanian Narasimhan <naras@stat.stanford.edu>
 }
-\references{
-  Mei-Chiung Shih, Tze Leung Lai, Joseph F. Heyse, and Jie
-  Chen. Sequential Generalized Likelihood Ratio Tests for Vaccine Safety
-  Evaluation (Statistics in Medicine, Volume 29, issue 26, p.2698-2708,
-  2010.)
 
-  Please also consult the website
-  \url{http://med.stanford.edu/biostatistics/ClinicalTrialMethodology/}
-  for further developments.
+\references{
+``Sequential Generalized Likelihood Ratio Tests for Vaccine Safety Evaluation''
+\doi{10.1002/sim.4036}.
 }
+
 \keyword{ design }
 \examples{
 library(sglr)

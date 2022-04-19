@@ -1,3 +1,6 @@
 exportPattern("^[[:alpha:]]+")
-importFrom(ggplot2, aes, geom_step, geom_text, ggplot, scale_x_continuous, theme)
-importFrom(shiny, runApp)
+
+importFrom(stats, uniroot)
+importFrom(ggplot2, ggplot, geom_step, theme, scale_x_continuous, scale_y_continuous, geom_text, aes)
+import(shiny)
+

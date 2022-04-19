@@ -8,8 +8,8 @@
   currently falls flat.  Will be rewritten.
 }
 \usage{
-plotBoundary(b1, b0, p, glrTables = NULL, tol=1e-7,
-             legend=FALSE, textXOffset=2, textYSkip=2)
+plotBoundary(b1, b0, p, glrTables = NULL, tol = 1e-7,
+             legend  =FALSE, textXOffset = 2, textYSkip = 2)
 }
 
 \arguments{
